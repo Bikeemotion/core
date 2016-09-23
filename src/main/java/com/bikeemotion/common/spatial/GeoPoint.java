@@ -14,14 +14,29 @@ package com.bikeemotion.common.spatial;
 import java.io.Serializable;
 
 public class GeoPoint extends GeoShape implements Serializable {
-  private Double latitude;
 
+  // members
+  private Double latitude;
   private Double longitude;
 
   public Double getLatitude() {
     return latitude;
   }
 
+  // public API
+  public GeoPoint() {}
+
+  public GeoPoint(Double longitude, Double latitude) {
+    this.setLongitude(longitude);
+    this.setLatitude(latitude);
+  }
+
+  public String toWkt() {
+    return String.format("POINT (%s %s)", this.getLongitude(),
+        this.getLatitude());
+  }
+
+  // getters & setters
   public void setLatitude(Double latitude) {
     this.latitude = latitude;
   }
@@ -32,18 +47,5 @@ public class GeoPoint extends GeoShape implements Serializable {
 
   public void setLongitude(Double longitude) {
     this.longitude = longitude;
-  }
-
-  public String toWkt() {
-    return String.format("POINT (%s %s)", this.getLongitude(),
-        this.getLatitude());
-  }
-
-  public GeoPoint() {
-  }
-
-  public GeoPoint(Double longitude, Double latitude) {
-    this.setLongitude(longitude);
-    this.setLatitude(latitude);
   }
 }

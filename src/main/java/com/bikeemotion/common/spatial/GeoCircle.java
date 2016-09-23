@@ -14,12 +14,23 @@ package com.bikeemotion.common.spatial;
 import java.io.Serializable;
 
 public class GeoCircle extends GeoShape implements Serializable {
+
   // members
   private Double latitude;
 
   private Double longitude;
 
   private Double radius;
+
+  // public API
+  public GeoCircle() {}
+
+  public GeoCircle(Double longitude, Double latitude, Double radius) {
+
+    this.latitude = latitude;
+    this.longitude = longitude;
+    this.radius = radius;
+  }
 
   // getters & setters
   public Double getLatitude() {
@@ -45,15 +56,4 @@ public class GeoCircle extends GeoShape implements Serializable {
   public void setRadius(Double radius) {
     this.radius = radius;
   }
-
-  // public API
-  public GeoCircle() {
-  }
-
-  public GeoCircle(Double longitude, Double latitude, Double radius) {
-    this.latitude = latitude;
-    this.longitude = longitude;
-    this.radius = radius;
-  }
-
 }

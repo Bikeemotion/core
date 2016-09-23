@@ -12,11 +12,25 @@
 package com.bikeemotion.common.spatial;
 
 public class BoundingBox {
+
+  // members
   private double topLeftLat;
   private double topLeftLon;
   private double bottomRightLat;
   private double bottomRightLon;
 
+  // public API
+  private BoundingBox() {}
+
+  public BoundingBox(double topLeftLat, double topLeftLon, double bottomRightLat, double bottomRightLon) {
+
+    this.topLeftLat = topLeftLat;
+    this.topLeftLon = topLeftLon;
+    this.bottomRightLat = bottomRightLat;
+    this.bottomRightLon = bottomRightLon;
+  }
+
+  // getters & setters
   public double getTopLeftLat() {
     return topLeftLat;
   }
@@ -31,16 +45,5 @@ public class BoundingBox {
 
   public double getBottomRightLon() {
     return bottomRightLon;
-  }
-
-  private BoundingBox() {
-  }
-
-  public BoundingBox(double topLeftLat, double topLeftLon,
-      double bottomRightLat, double bottomRightLon) {
-    this.topLeftLat = topLeftLat;
-    this.topLeftLon = topLeftLon;
-    this.bottomRightLat = bottomRightLat;
-    this.bottomRightLon = bottomRightLon;
   }
 }
