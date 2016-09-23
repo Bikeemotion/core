@@ -11,18 +11,72 @@
  */
 package com.bikeemotion.common.spatial;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.JsonSerializable;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
-
-import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class GeoPolygon extends GeoShape implements Serializable/*, JsonSerializable*/ {
+public class GeoPolygon extends GeoShape implements Serializable/*, JsonSerializable*/{
+
   // members
   private List<GeoPoint> points;
+
+  // public API
+  public GeoPolygon() {
+
+  }
+
+  public GeoPolygon(List<GeoPoint> points) {
+    this.points = points;
+  }
+
+  private String toWKT() {
+
+    ArrayList<GeoPoint> copy = new ArrayList<>(points);
+    copy.sort((e1, e2) -> e1.toWkt().compareTo(e2.toWkt()));
+
+    StringBuilder sb = new StringBuilder();
+    sb.append("POLYGON ((");
+    for (int i = 0; i < copy.size(); i++) {
+      sb.append(copy.get(i).getLongitude().toString());
+      sb.append(" ");
+      sb.append(copy.get(i).getLatitude().toString());
+      if (i < copy.size() - 1) {
+        sb.append(",");
+      }
+    }
+    sb.append("))");
+
+    return sb.toString();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+
+    if (obj instanceof GeoPolygon) {
+
+      GeoPolygon p = (GeoPolygon) obj;
+      if (p.points == this.points) {
+        return true;
+      }
+
+      if (p.toWKT().equals(toWKT())) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  //  public void serialize(JsonGenerator jsonGenerator,
+  //      SerializerProvider serializerProvider) throws IOException {
+  //    serializeWithType(jsonGenerator, serializerProvider, null);
+  //  }
+  //
+  //  public void serializeWithType(JsonGenerator jsonGenerator,
+  //      SerializerProvider provider, TypeSerializer typeSer) throws IOException {
+  //    jsonGenerator.writeString(toWKT());
+  //  }
+  //
 
   // getters & setters
   public List<GeoPoint> getPoints() {
@@ -32,39 +86,4 @@ public class GeoPolygon extends GeoShape implements Serializable/*, JsonSerializ
   public void setPoints(List<GeoPoint> points) {
     this.points = points;
   }
-
-  // public API
-  public GeoPolygon() {
-  }
-
-  public GeoPolygon(List<GeoPoint> points) {
-    this.points = points;
-  }
-
-//  public void serialize(JsonGenerator jsonGenerator,
-//      SerializerProvider serializerProvider) throws IOException {
-//    serializeWithType(jsonGenerator, serializerProvider, null);
-//  }
-//
-//  public void serializeWithType(JsonGenerator jsonGenerator,
-//      SerializerProvider provider, TypeSerializer typeSer) throws IOException {
-//    jsonGenerator.writeString(toWKT());
-//  }
-//
-//  // internal API
-//  private String toWKT() {
-//    StringBuilder sb = new StringBuilder();
-//    sb.append("POLYGON ((");
-//    for (int i = 0; i < this.points.size(); i++) {
-//      sb.append(this.points.get(i).getLongitude().toString());
-//      sb.append(" ");
-//      sb.append(this.points.get(i).getLatitude().toString());
-//      if (i < this.points.size() - 1) {
-//        sb.append(",");
-//      }
-//    }
-//    sb.append("))");
-//
-//    return sb.toString();
-//  }
 }
