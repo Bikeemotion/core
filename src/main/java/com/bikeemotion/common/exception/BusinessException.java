@@ -13,8 +13,11 @@ package com.bikeemotion.common.exception;
 
 public class BusinessException extends Exception {
 
+  // members
   private ExceptionErrorCodes code = ExceptionErrorCodes.UNKNOWN;
+  private ExceptionMeta meta;
 
+  // public API
   public BusinessException() {
 
   }
@@ -29,42 +32,75 @@ public class BusinessException extends Exception {
     super(cause);
   }
 
-  public BusinessException(ExceptionErrorCodes code) {
-
-    super();
-    this.code = code;
-  }
-
-  public BusinessException(ExceptionErrorCodes code, String message) {
-
-    super(message);
-    this.code = code;
-  }
-
   public BusinessException(String message, Throwable cause) {
 
     super(message, cause);
   }
 
-  public BusinessException(ExceptionErrorCodes code, String message, Throwable cause) {
+  public BusinessException(String message, ExceptionErrorCodes code) {
 
-    super(message, cause);
+    this(message);
     this.code = code;
   }
 
-  public int getCode() {
+  public BusinessException(String message, ExceptionMeta meta) {
 
-    return this.code == ExceptionErrorCodes.UNKNOWN ?
-        BusinessException.getCode(this.getClass()):
-        this.code.getValue();
+    super(message);
+    this.meta = meta;
   }
 
-  public static int getCode(Class c) {
+  public BusinessException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+
+    this(message);
+    this.code = code;
+    this.meta = meta;
+  }
+
+  public BusinessException(String message, Throwable cause, ExceptionErrorCodes code) {
+
+    this(message, cause);
+    this.code = code;
+  }
+
+  public BusinessException(String message, Throwable cause, ExceptionMeta meta) {
+
+    this(message, cause);
+    this.meta = meta;
+  }
+
+  public BusinessException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+
+    this(message, cause, code);
+    this.meta = meta;
+  }
+
+  // internal API
+  public static int getCode(final Class clazz) {
 
     int result = 0;
-    for (int i = 0; i < c.getCanonicalName().getBytes().length; i++) {
-      result += c.getCanonicalName().getBytes()[i];
+    for (int i = 0; i < clazz.getCanonicalName().getBytes().length; i++) {
+      result += clazz.getCanonicalName().getBytes()[i];
     }
     return result;
   }
+
+  // getters & setters
+  public int getCode() {
+
+    return code == ExceptionErrorCodes.UNKNOWN
+        ? getCode(getClass())
+        : code.getValue();
+  }
+
+  public ExceptionMeta getMeta() {
+
+    return meta;
+  }
+
+  public  <T extends BusinessException> T setMeta(ExceptionMeta meta) {
+
+    this.meta = meta;
+    return (T)this;
+  }
+
 }

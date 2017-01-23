@@ -11,8 +11,8 @@
  */
 package com.bikeemotion.common.exception;
 
-
 public class TemplateParsingException extends BusinessException {
+
   public TemplateParsingException() {
   }
 
@@ -22,5 +22,33 @@ public class TemplateParsingException extends BusinessException {
 
   public TemplateParsingException(Throwable cause) {
     super(cause);
+  }
+
+  public TemplateParsingException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public TemplateParsingException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public TemplateParsingException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public TemplateParsingException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public TemplateParsingException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public TemplateParsingException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public TemplateParsingException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
   }
 }

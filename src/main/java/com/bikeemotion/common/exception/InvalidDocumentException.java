@@ -11,43 +11,43 @@
  */
 package com.bikeemotion.common.exception;
 
-public class NullArgumentException extends InvalidArgumentException {
+public class InvalidDocumentException extends BusinessException {
 
-  public NullArgumentException() {}
+  public InvalidDocumentException() {}
 
-  public NullArgumentException(String message) {
+  public InvalidDocumentException(String message) {
     super(message);
   }
 
-  public NullArgumentException(Throwable cause) {
+  public InvalidDocumentException(Throwable cause) {
     super(cause);
   }
 
-  public NullArgumentException(String message, Throwable cause) {
+  public InvalidDocumentException(String message, Throwable cause) {
     super(message, cause);
   }
 
-  public NullArgumentException(String message, ExceptionErrorCodes code) {
+  public InvalidDocumentException(String message, ExceptionErrorCodes code) {
     super(message, code);
   }
 
-  public NullArgumentException(String message, ExceptionMeta meta) {
+  public InvalidDocumentException(String message, ExceptionMeta meta) {
     super(message, meta);
   }
 
-  public NullArgumentException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+  public InvalidDocumentException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
     super(message, code, meta);
   }
 
-  public NullArgumentException(String message, Throwable cause, ExceptionErrorCodes code) {
+  public InvalidDocumentException(String message, Throwable cause, ExceptionErrorCodes code) {
     super(message, cause, code);
   }
 
-  public NullArgumentException(String message, Throwable cause, ExceptionMeta meta) {
+  public InvalidDocumentException(String message, Throwable cause, ExceptionMeta meta) {
     super(message, cause, meta);
   }
 
-  public NullArgumentException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+  public InvalidDocumentException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
     super(message, cause, code, meta);
   }
 }

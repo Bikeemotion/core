@@ -13,20 +13,46 @@ package com.bikeemotion.common.exception;
 
 public class FailingFastException extends BusinessException {
 
-  public FailingFastException() {
+  public FailingFastException() {}
 
-    super();
+  public FailingFastException(String message) {
+    super(message);
   }
 
-  public FailingFastException(final String msg) {
-
-    super(msg);
-  }
-
-  public FailingFastException(final Throwable cause) {
-
+  public FailingFastException(Throwable cause) {
     super(cause);
   }
 
+  public FailingFastException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
+  public FailingFastException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public FailingFastException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public FailingFastException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public FailingFastException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public FailingFastException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public FailingFastException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
+  }
+
+  @Override
+  public FailingFastException setMeta(ExceptionMeta meta) {
+    return super.setMeta(meta);
+  }
 }

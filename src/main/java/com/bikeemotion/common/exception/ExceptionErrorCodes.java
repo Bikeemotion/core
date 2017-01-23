@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum ExceptionErrorCodes {
+
   UNKNOWN(-1),
 
   CYCLE_OUT_OF_SERVICE(1001),
@@ -40,26 +41,33 @@ public enum ExceptionErrorCodes {
 
   SYSTEM_CLOSED(5001);
 
-  // reverse-lookup map
-  private static final Map<Integer, ExceptionErrorCodes> lookup = new HashMap<>();
+  // members
+  private int value;
+  private static final Map<Integer, ExceptionErrorCodes> lookup;
 
+  // initializer
   static {
+
+    lookup = new HashMap<>();
+
     for (ExceptionErrorCodes attr : ExceptionErrorCodes.values()) {
       lookup.put(attr.getValue(), attr);
     }
   }
 
-  private int value;
+  // API
   ExceptionErrorCodes(int value) {
+
     this.value = value;
   }
 
-  public int getValue(){
+  public int getValue() {
+
     return this.value;
   }
 
-  public static ExceptionErrorCodes get(final Integer code) {
+  public static ExceptionErrorCodes get(int code) {
+
     return lookup.get(code);
   }
-
 }

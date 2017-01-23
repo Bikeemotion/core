@@ -13,19 +13,41 @@ package com.bikeemotion.common.exception;
 
 public class IllegalOperationException extends BusinessException {
 
-  public IllegalOperationException() {
-    super();
-  }
+  public IllegalOperationException() {}
 
-  public IllegalOperationException(String msg) {
-    super(msg);
-  }
-
-  public IllegalOperationException(ExceptionErrorCodes code, String msg) {
-    super(code, msg);
+  public IllegalOperationException(String message) {
+    super(message);
   }
 
   public IllegalOperationException(Throwable cause) {
     super(cause);
+  }
+
+  public IllegalOperationException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public IllegalOperationException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public IllegalOperationException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public IllegalOperationException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public IllegalOperationException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public IllegalOperationException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public IllegalOperationException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
   }
 }

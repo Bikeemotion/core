@@ -14,15 +14,41 @@ package com.bikeemotion.common.exception;
 public class NotUniqueValueException extends BusinessException {
 
   public NotUniqueValueException() {
-    super();
   }
 
-  public NotUniqueValueException(String msg) {
-    super(msg);
+  public NotUniqueValueException(String message) {
+    super(message);
   }
 
   public NotUniqueValueException(Throwable cause) {
     super(cause);
   }
 
+  public NotUniqueValueException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public NotUniqueValueException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public NotUniqueValueException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public NotUniqueValueException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public NotUniqueValueException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public NotUniqueValueException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public NotUniqueValueException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
+  }
 }

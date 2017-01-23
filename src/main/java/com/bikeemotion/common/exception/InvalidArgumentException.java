@@ -12,11 +12,42 @@
 package com.bikeemotion.common.exception;
 
 public class InvalidArgumentException extends BusinessException {
+
+  public InvalidArgumentException() {}
+
+  public InvalidArgumentException(String message) {
+    super(message);
+  }
+
   public InvalidArgumentException(Throwable cause) {
     super(cause);
   }
 
-  public InvalidArgumentException(String msg) {
-    super(msg);
+  public InvalidArgumentException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public InvalidArgumentException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public InvalidArgumentException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public InvalidArgumentException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public InvalidArgumentException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public InvalidArgumentException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public InvalidArgumentException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
   }
 }

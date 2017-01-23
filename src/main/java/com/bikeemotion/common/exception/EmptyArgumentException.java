@@ -11,16 +11,43 @@
  */
 package com.bikeemotion.common.exception;
 
-/**
- * Exception to be thrown when an argument is empty and shouldn't be.
- */
 public class EmptyArgumentException extends InvalidArgumentException {
+
+  public EmptyArgumentException() {}
+
+  public EmptyArgumentException(String message) {
+    super(message);
+  }
 
   public EmptyArgumentException(Throwable cause) {
     super(cause);
   }
 
-  public EmptyArgumentException(String msg) {
-    super(msg);
+  public EmptyArgumentException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public EmptyArgumentException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public EmptyArgumentException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public EmptyArgumentException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public EmptyArgumentException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public EmptyArgumentException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public EmptyArgumentException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
   }
 }

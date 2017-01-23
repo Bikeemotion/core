@@ -11,19 +11,49 @@
  */
 package com.bikeemotion.common.exception;
 
-import com.bikeemotion.common.exception.BusinessException;
-
 public class ParseDocumentException extends BusinessException {
-  public ParseDocumentException() {
-    super();
+
+  public ParseDocumentException() {}
+
+  public ParseDocumentException(String message) {
+    super(message);
   }
 
   public ParseDocumentException(Throwable cause) {
     super(cause);
   }
 
-  public ParseDocumentException(String msg) {
-    super(msg);
+  public ParseDocumentException(String message, Throwable cause) {
+    super(message, cause);
   }
 
+  public ParseDocumentException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public ParseDocumentException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public ParseDocumentException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public ParseDocumentException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+
+  }
+
+  public ParseDocumentException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public ParseDocumentException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
+  }
+
+  @Override
+  public ParseDocumentException setMeta(ExceptionMeta meta) {
+    return super.setMeta(meta);
+  }
 }

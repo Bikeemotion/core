@@ -11,19 +11,48 @@
  */
 package com.bikeemotion.common.exception;
 
-import com.bikeemotion.common.exception.BusinessException;
-
 public class CreateDocumentException extends BusinessException {
-  public CreateDocumentException() {
-    super();
+
+  public CreateDocumentException() {}
+
+  public CreateDocumentException(String message) {
+    super(message);
   }
 
   public CreateDocumentException(Throwable cause) {
     super(cause);
   }
 
-  public CreateDocumentException(String msg) {
-    super(msg);
+  public CreateDocumentException(String message, Throwable cause) {
+    super(message, cause);
   }
 
+  public CreateDocumentException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public CreateDocumentException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public CreateDocumentException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public CreateDocumentException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public CreateDocumentException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public CreateDocumentException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
+  }
+
+  @Override
+  public CreateDocumentException setMeta(ExceptionMeta meta) {
+    return super.setMeta(meta);
+  }
 }

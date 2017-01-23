@@ -11,19 +11,43 @@
  */
 package com.bikeemotion.common.exception;
 
-import com.bikeemotion.common.exception.BusinessException;
-
 public class UpdateDocumentException extends BusinessException {
-  public UpdateDocumentException() {
-    super();
+
+  public UpdateDocumentException() {}
+
+  public UpdateDocumentException(String message) {
+    super(message);
   }
 
   public UpdateDocumentException(Throwable cause) {
     super(cause);
   }
 
-  public UpdateDocumentException(String msg) {
-    super(msg);
+  public UpdateDocumentException(String message, Throwable cause) {
+    super(message, cause);
   }
 
+  public UpdateDocumentException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public UpdateDocumentException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public UpdateDocumentException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public UpdateDocumentException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public UpdateDocumentException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public UpdateDocumentException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
+  }
 }

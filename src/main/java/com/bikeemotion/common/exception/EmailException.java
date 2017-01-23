@@ -11,18 +11,45 @@
  */
 package com.bikeemotion.common.exception;
 
-public class EmailException extends
-    BusinessException {
+public class EmailException extends BusinessException {
 
   public EmailException() {
-    super();
+
   }
 
-  public EmailException(String msg) {
-    super(msg);
+  public EmailException(String message) {
+    super(message);
   }
 
   public EmailException(Throwable cause) {
     super(cause);
+  }
+
+  public EmailException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public EmailException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public EmailException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public EmailException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public EmailException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public EmailException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public EmailException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
   }
 }

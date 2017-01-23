@@ -14,14 +14,42 @@ package com.bikeemotion.common.exception;
 public class MissingServiceException extends BusinessException {
 
   public MissingServiceException() {
-    super();
+
   }
 
-  public MissingServiceException(String msg) {
-    super(msg);
+  public MissingServiceException(String message) {
+    super(message);
   }
 
   public MissingServiceException(Throwable cause) {
     super(cause);
+  }
+
+  public MissingServiceException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public MissingServiceException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public MissingServiceException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public MissingServiceException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public MissingServiceException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public MissingServiceException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public MissingServiceException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
   }
 }

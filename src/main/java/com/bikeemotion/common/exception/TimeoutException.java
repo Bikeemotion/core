@@ -13,19 +13,41 @@ package com.bikeemotion.common.exception;
 
 public class TimeoutException extends BusinessException {
 
-  public TimeoutException() {
+  public TimeoutException() {}
 
-    super();
+  public TimeoutException(String message) {
+    super(message);
   }
 
-  public TimeoutException(final String msg) {
-
-    super(msg);
-  }
-
-  public TimeoutException(final Throwable cause) {
-
+  public TimeoutException(Throwable cause) {
     super(cause);
   }
 
+  public TimeoutException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public TimeoutException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public TimeoutException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public TimeoutException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public TimeoutException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+  }
+
+  public TimeoutException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public TimeoutException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
+  }
 }

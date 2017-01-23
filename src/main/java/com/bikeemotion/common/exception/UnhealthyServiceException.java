@@ -14,18 +14,42 @@ package com.bikeemotion.common.exception;
 public class UnhealthyServiceException extends BusinessException {
 
   public UnhealthyServiceException() {
-
-    super();
   }
 
-  public UnhealthyServiceException(final String msg) {
-
-    super(msg);
+  public UnhealthyServiceException(String message) {
+    super(message);
   }
 
-  public UnhealthyServiceException(final Throwable cause) {
-
+  public UnhealthyServiceException(Throwable cause) {
     super(cause);
   }
 
+  public UnhealthyServiceException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public UnhealthyServiceException(String message, ExceptionErrorCodes code) {
+    super(message, code);
+  }
+
+  public UnhealthyServiceException(String message, ExceptionMeta meta) {
+    super(message, meta);
+  }
+
+  public UnhealthyServiceException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, code, meta);
+  }
+
+  public UnhealthyServiceException(String message, Throwable cause, ExceptionErrorCodes code) {
+    super(message, cause, code);
+
+  }
+
+  public UnhealthyServiceException(String message, Throwable cause, ExceptionMeta meta) {
+    super(message, cause, meta);
+  }
+
+  public UnhealthyServiceException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+    super(message, cause, code, meta);
+  }
 }
