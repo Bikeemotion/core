@@ -11,7 +11,7 @@
   <groupId>com.bikeemotion</groupId>
   <artifactId>core</artifactId>
   <name>Bikeemotion Core</name>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
   <packaging>bundle</packaging>
 
   <issueManagement>
