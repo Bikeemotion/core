@@ -39,7 +39,9 @@ public enum ExceptionErrorCodes {
 
   STATION_CLOSED(4001),
 
-  SYSTEM_CLOSED(5001);
+  SYSTEM_CLOSED(5001),
+
+  ROUTE_ALREADY_LOCKED(6001);
 
   // members
   private int value;
