@@ -92,15 +92,20 @@ public class BusinessException extends Exception {
         : code.getValue();
   }
 
+  public BusinessException setCode(ExceptionErrorCodes code) {
+    this.code = code;
+    return this;
+  }
+
   public ExceptionMeta getMeta() {
 
     return meta;
   }
 
-  public  <T extends BusinessException> T setMeta(ExceptionMeta meta) {
+  public <T extends BusinessException> T setMeta(ExceptionMeta meta) {
 
     this.meta = meta;
-    return (T)this;
+    return (T) this;
   }
 
 }
