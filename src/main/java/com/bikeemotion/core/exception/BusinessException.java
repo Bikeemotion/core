@@ -9,12 +9,12 @@
  * personnel only. Technical specifications and features are binding only when
  * specifically and expressly agreed upon in a written contract.
  */
-package com.bikeemotion.common.exception;
+package com.bikeemotion.core.exception;
 
 public class BusinessException extends Exception {
 
   // members
-  private ExceptionErrorCodes code = ExceptionErrorCodes.UNKNOWN;
+  private ErrorCodes code = null;
   private ExceptionMeta meta;
 
   // public API
@@ -37,7 +37,7 @@ public class BusinessException extends Exception {
     super(message, cause);
   }
 
-  public BusinessException(String message, ExceptionErrorCodes code) {
+  public BusinessException(String message, ErrorCodes code) {
 
     this(message);
     this.code = code;
@@ -49,14 +49,14 @@ public class BusinessException extends Exception {
     this.meta = meta;
   }
 
-  public BusinessException(String message, ExceptionErrorCodes code, ExceptionMeta meta) {
+  public BusinessException(String message, ErrorCodes code, ExceptionMeta meta) {
 
     this(message);
     this.code = code;
     this.meta = meta;
   }
 
-  public BusinessException(String message, Throwable cause, ExceptionErrorCodes code) {
+  public BusinessException(String message, Throwable cause, ErrorCodes code) {
 
     this(message, cause);
     this.code = code;
@@ -68,7 +68,7 @@ public class BusinessException extends Exception {
     this.meta = meta;
   }
 
-  public BusinessException(String message, Throwable cause, ExceptionErrorCodes code, ExceptionMeta meta) {
+  public BusinessException(String message, Throwable cause, ErrorCodes code, ExceptionMeta meta) {
 
     this(message, cause, code);
     this.meta = meta;
@@ -87,12 +87,12 @@ public class BusinessException extends Exception {
   // getters & setters
   public int getCode() {
 
-    return code == ExceptionErrorCodes.UNKNOWN
+    return code == null
         ? getCode(getClass())
         : code.getValue();
   }
 
-  public BusinessException setCode(ExceptionErrorCodes code) {
+  public BusinessException setCode(ErrorCodes code) {
     this.code = code;
     return this;
   }

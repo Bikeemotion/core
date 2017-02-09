@@ -1,4 +1,4 @@
-package com.bikeemotion.common.exception;
+package com.bikeemotion.core.exception;
 
 import java.util.Map;
 
